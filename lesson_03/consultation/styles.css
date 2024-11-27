@@ -1,0 +1,26 @@
+* {
+    box-sizing: border-box;
+}
+
+header {
+    padding: 30px 0;
+    background-color: gray;
+    text-align: center;
+}
+
+.card-genre {
+    background-color: aqua;
+    border: 2px solid;
+    margin: 10px 30px;
+    padding: 100px 10px;
+    width: 500px;
+    text-align: center;
+    border-radius: 50%;
+    height: 500px;
+    box-shadow: 0px 14px 8px;
+}
+
+.card-hard {
+    background-color: black;
+    color: azure;
+}
