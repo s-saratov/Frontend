@@ -1,0 +1,109 @@
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+li {
+  margin: 0;
+  padding: 0;
+}
+
+#root {
+  width: 100%;
+  min-height: 100%;
+  background-color: aquamarine;
+  /* через слеш указываем свойство background-size */
+  background: url(./images/background-image.jpg) center / cover;
+}
+
+header {
+  position: fixed;
+  top: 20px;
+  width: 70vw;
+  height: 30vh;
+  padding: 30px;
+  font-size: 30px;
+  background-color: rgb(9, 86, 96);
+  z-index: 5;
+}
+
+main {
+  padding: 150px 20px 20px;
+}
+
+.cards-wrapper {
+  position: relative;
+  font-size: 16px;
+  width: 30%;
+  height: 700px;
+  padding: 2em;
+  margin: 40px 0 0 30px;
+  background-color: rgb(110, 134, 179);
+}
+
+.card {
+  width: 150px;
+  height: 150px;
+  padding: 10px;
+  font-size: 16px;
+}
+
+.card-approach {
+  position: relative;
+  background-color: rgb(236, 224, 93);
+  border: 2px solid rgb(89, 97, 14);
+  z-index: 4;
+}
+
+.card-team {
+  /* абсолютная позиция */
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: rgb(211, 82, 205);
+  border: 2px solid rgb(47, 6, 45);
+}
+
+.card-focus {
+  /* относительная позиция */
+  /* position: static; */
+  position: relative;
+  /* top: 30px; */
+  left: 50px;
+  /* right: 50px; */
+  bottom: 50px;
+  background-color: rgb(183, 230, 159);
+  border: 2px solid rgb(28, 67, 39);
+  z-index: 3;
+}
+
+.card-location {
+  /* позиция sticky */
+  position: sticky;
+  /* width: 70 vw; */
+  top: 0;
+  background-color: rgb(178, 129, 102);
+  border: 2px solid rgb(97, 64, 20);
+  z-index: 2;
+}
+
+.image-container {
+  background-image: url(./images/rocks.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
