@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./styles.css" type="text/css" />
+    <title>Homework 06</title>
+  </head>
+  <body>
+    <div id="root">
+      <header>
+        <div class="info">
+          <h1>Contact us</h1>
+        </div>
+      </header>
+      <main>
+        <div class="page-wrapper">
+          <form class="registration-form">
+            <div>
+              <label for="name">Name*:</label>
+              <input
+                required
+                maxlength="20"
+                type="text"
+                name="name"
+                placeholder="Your name"
+                id="name"
+                class="form-input"
+              />
+            </div>
+            <div>
+              <label for="email">Email:</label>
+              <input
+                type="email"
+                name="email"
+                placeholder="Your working email"
+                id="email"
+                class="form-input"
+              />
+            </div>
+            <div>
+              <label for="location">Location:</label>
+              <select id="location" name="location">
+                <option value="">
+                  -- Please choose your location --
+                </option>
+                <option value="New York">New York</option>
+                <option value="Los Angeles" selected>Los Angeles</option>
+                <option value="Chicago">Chicago</option>
+                <option value="Boston">Boston</option>
+              </select>
+            </div>
+            <div>
+              <label for="message">Message*:</label>
+              <textarea
+                required
+                id="message"
+                name="message"
+                placeholder="Your message"
+              ></textarea>
+            </div>
+            <div class="checkbox-container">
+                <input type="checkbox" id="agree" name="user_agree" unchecked />
+                <label for="agree">I agree</label>
+            </div>
+            <div>
+                <button type="submit">SUBMIT</button>
+                <button type="reset">CLEAR FORM</button>
+              </div>
+          </form>
+        </div>
+      </main>
+    </div>
+  </body>
+</html>
