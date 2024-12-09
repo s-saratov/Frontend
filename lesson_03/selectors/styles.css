@@ -1,0 +1,14 @@
+/* Селектор по элементу */
+p {
+    color: blueviolet
+}
+
+/* Селектор по id */
+#main-title {
+    color: aqua;
+}
+
+/* Селектор по классу */
+.description {
+    color: aquamarine;
+}

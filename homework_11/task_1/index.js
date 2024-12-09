@@ -13,3 +13,10 @@ for (let i = 0; i < numbersArr.length; i++) {
   console.log(`Element # ${i}: ${numbersArr[i]}; ${numbersArr[i]} * 2 = ${numbersArr[i] * 2}`);
   numbersArr[i] = numbersArr[i] * 2;
 }
+
+// Альтернативный вариант - for of
+// numberItem = numbersArr[i]
+// for (let numberItem of numbersArr) {
+//   numberItem *= 2;
+//   console.log(numberItem);
+// }
