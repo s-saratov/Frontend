@@ -12,3 +12,26 @@ p {
 .description {
     color: aquamarine;
 }
+
+.main-sescription {
+    font-size: 38px;
+}
+
+span.description {
+    font-size: 50px;
+}
+
+/* Селектор по атрибуту */
+/* [href] {
+    font-size: 40px;
+} */
+
+[href = '#main-title'] {
+    font-size: 40px;
+}
+
+/* Универсальный селектор */
+
+* {
+    margin: 0;
+}
