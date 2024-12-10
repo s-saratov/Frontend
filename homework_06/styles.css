@@ -59,13 +59,12 @@ body {
     gap: 1.5rem;
   }
   
-  .registration-form div {
+  /* .registration-form div {
     display: flex;
     flex-direction: column;
-  }
+  } */
   
   .registration-form label {
-    margin-bottom: 0.5rem;
     font-weight: bold;
   }
   

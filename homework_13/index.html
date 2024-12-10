@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./styles.css" type="text/css" />
+    <script src="index.js" defer></script>
+    <title>Homework 13</title>
+  </head>
+  <body>
+    <div class="main-container">
+      <div id="list-container">
+        <h3 class="title">Языки программирования</h3>
+        <ol id = "list">
+          <li>Fortran</li>
+          <li>Cobol</li>
+          <li>C</li>
+          <li>C++</li>
+          <li>Java</li>
+        </ol>
+      </div>
+      <div id="controls-container">
+        <label for="pl-name">Введите название:</label>
+        <input
+          required
+          type="text"
+          placeholder="BASIC"
+          id="pl-name"
+          class="form-input"
+        />
+        <div id = "buttons-container">
+            <button type="button" id="to-top">Добавить в начало списка</button>
+            <button type="button" id="to-end">Добавить в конец списка</button>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
