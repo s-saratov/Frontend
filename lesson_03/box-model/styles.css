@@ -1,0 +1,22 @@
+* {
+    box-sizing: border-box;
+}
+
+.apple-block {
+  width: 200px;
+  height: 300px;
+  background-color: aquamarine;
+  padding: 20px;
+  margin: 20px;
+  border: 2px solid rgb(18, 73, 75);
+
+}
+
+.cherry-block {
+  width: 300px;
+  height: 300px;
+  background-color: rgb(127, 232, 255);
+  padding: 30px;
+  margin: 20px;
+  border: 2px solid rgb(12, 16, 52);
+}

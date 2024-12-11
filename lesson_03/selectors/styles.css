@@ -9,12 +9,13 @@ p {
 }
 
 /* Селектор по классу */
-.description {
-    color: aquamarine;
+.main-description {
+    font-size: 38px;
+    color: brown;
 }
 
-.main-sescription {
-    font-size: 38px;
+.description {
+    color: aquamarine;
 }
 
 span.description {
@@ -34,4 +35,9 @@ span.description {
 
 * {
     margin: 0;
+}
+
+/* Кофликт стилей */
+h1 {
+    color: red;
 }
