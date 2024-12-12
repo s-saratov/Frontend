@@ -56,5 +56,5 @@ const getIdealWeight = (event) => {
   idealWeightContainer.style.display = 'flex';
 };
 
-// Запускам ожидание события нажатия на кнопку
+// Запускаем ожидание события нажатия на кнопку
 calculatorForm.addEventListener("submit", getIdealWeight);
