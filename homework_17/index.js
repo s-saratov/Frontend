@@ -12,7 +12,7 @@ let timerId; // идентификатор таймера
 let remainingTime = 60.0; // оставшееся время
 
 // Создаём переменные для привязки к необходимым объектам на странице
-const currentTime = document.getElementById("remaining-time"); // параграф с оставшися временем
+const currentTime = document.getElementById("remaining-time"); // параграф с оставшимся временем
 const startButton = document.getElementById("start-button"); // кнопка START
 const stopButton = document.getElementById("stop-button"); // кнопка STOP
 const clearButton = document.getElementById("clear-button"); // кнопка Clear
