@@ -1,0 +1,82 @@
+/* Глобальные стили */
+
+* {
+   /* width = content + padding + border */
+    box-sizing: border-box;
+  }
+  
+  body,
+  html {
+    margin: 0;
+    padding: 0;
+  }
+  
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p,
+  ul,
+  ol,
+  li {
+    margin: 0;
+    padding: 0;
+  }
+  
+  #root {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100%;
+    padding: 40px;
+    background-color: rgb(35, 32, 59);
+  }
+
+  .user-card {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 500px;
+    min-height: 300px;
+    max-height: fit-content;
+    border: 2px solid black;
+    background-color: white;
+    padding: 40px;
+    border-radius: 4px;
+  }
+
+  .user-avatar {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    align-self: center;
+  }
+
+  .user-name {
+    font-size: 20px;
+    font-weight: bold;
+  }
+
+  .user-city {
+    font-size: 18px;
+  }
+  
+  .user-phone {
+    font-size: 18px;
+  }
+
+  .get-user {
+    outline: none;
+    border: none;
+    width: 100%;
+    height: 60px;
+    background-color: rgb(26, 26, 113);
+    font-size: 18px;
+    font-weight: bold;
+    color: white;
+    border-radius: 4px;
+    cursor: pointer;
+  }
