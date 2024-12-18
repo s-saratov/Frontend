@@ -39,11 +39,12 @@ h1 {
   color: #333;
 }
 
-#timer-container {
+#joke-container {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  min-width: 350px;
   gap: 1rem;
   background-color: #fff;
   border: 1px solid #ddd;
@@ -53,20 +54,17 @@ h1 {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-#prices-container {
-display: flex;
-  align-items: flex;
-  gap: 10px;
-  padding: 10px 0;
+#load-ind{
+  display: none;
 }
 
-#remaining-time {
-  font-size: 48px;
+#error{
+  color: red;
   font-weight: bold;
-  color: black;
+  display: none;
 }
 
-.timer-button {
+#download-button {
   cursor: pointer;
   padding: 0.5rem 1rem;
   border: none;
@@ -74,12 +72,15 @@ display: flex;
   font-size: 20px;
   background-color: #007bff;
   color: white;
+  
 }
 
-.timer-button:hover {
+#download-button:hover {
   background-color: #0056b3;
 }
 
-#stop-button {
-  display: none;
+#download-button:disabled {
+  background-color: #7d7d80;
+  color: rgb(166, 163, 163);
+  cursor: default;
 }

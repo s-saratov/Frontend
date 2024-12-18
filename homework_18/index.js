@@ -1,67 +1,61 @@
 /*
 Задание
 
-Создайте простой таймер на веб-странице, который будет отсчитывать время назад от 60 секунд.
-При достижении 0 секунд таймер должен остановиться.
-
-Стилизуйте его.
+Требования:
+  - Нужно создать кнопку "Get Joke", при клике на которую, будет выполняться GET запрос(используйте fetch). В ответе на запрос будет приходить случайная шутка
+  - url: https://official-joke-api.appspot.com/random_joke
+  - После того как вы получите успешный ответ, разместите шутку на странице
+  - Если запрос завершиться ошибкой, её нужно разместить на странице и выделить красным цветом
+  - Каждый раз, когда происходит клик на кнопку, должен выполняться новый запрос и приходить новая шутка
+  - Во время запроса кнопка должна быть заблокирована
+  - Стилизуйте на ваше усмотрение
 */
 
-// Создаём глобальные переменные
-let timerId; // идентификатор таймера
-let remainingTime = 60.0; // оставшееся время
+const JOKE_URL = "https://official-joke-api.appspot.com/random_joke"; // глобальная переменная, содержащая ссылку на сервер шуток
 
 // Создаём переменные для привязки к необходимым объектам на странице
-const currentTime = document.getElementById("remaining-time"); // параграф с оставшимся временем
-const startButton = document.getElementById("start-button"); // кнопка START
-const stopButton = document.getElementById("stop-button"); // кнопка STOP
-const clearButton = document.getElementById("clear-button"); // кнопка Clear
+const JOKE_TEXT = document.getElementById("joke-text");
+const LOAD_IND = document.getElementById("load-ind");
+const ERROR = document.getElementById("error");
+const BUTTON = document.getElementById("download-button");
 
-// Функция для кнопки START
-const startTimer = () => {
-  stopButton.style.display = "flex";
-  startButton.style.display = "none";
+// Функция для получения шуток
+const getJoke = async () => {
+  LOAD_IND.style.display = "flex";
+  JOKE_TEXT.style.display = "none";
+  ERROR.style.display = "none";
+  BUTTON.disabled = true;
 
-  timerId = setInterval(() => {
-    if (remainingTime < 0) {
-      remainingTime = 0;
-      clearInterval(timerId);
-      stopButton.style.display = "none";
-      return;
+  try {
+    const response = await fetch(JOKE_URL);
+    console.log(response);
+    const result = await response.json();
+    console.log(result);
+
+    if (response.ok) {
+      JOKE_TEXT.innerHTML = `<p id="joke-text">${result.setup}<br><b>${result.punchline}</b></p>`;
+      LOAD_IND.style.display = "none";
+      ERROR.style.display = "none";
+      JOKE_TEXT.style.display = "flex";
+      BUTTON.disabled = false;
+    } else {
+      throw new Error(result.message);
     }
 
-    if (remainingTime <= 10) {
-      currentTime.style.color = "red";
-    }
+  } catch (error) {
+    console.log(error);
+    JOKE_TEXT.style.display = "none";
+    LOAD_IND.style.display = "none";
+    ERROR.style.display = "flex";
+    ERROR.textContent = `Error: ${error.message}`;
 
-    updateTimer();
-    remainingTime -= 0.01;
-  }, 10);
+  } finally {
+    BUTTON.disabled = false;
+  }
 };
 
-// Функция обновления времени в соответсвующем параграфе страницы
-let updateTimer = () => {
-  currentTime.innerHTML = remainingTime.toFixed(2);
-};
+// Возможность запуска функции с интервалом в 10 мс для проверки отработки ошибок
+// setInterval(getJoke, 10);
 
-// Функция для кнопки STOP
-const stopTimer = () => {
-  startButton.style.display = "flex";
-  stopButton.style.display = "none";
-  clearInterval(timerId);
-};
-
-// Функция для кнопки Clear
-const clearTimer = () => {
-  clearInterval(timerId);
-  remainingTime = 60.0;
-  updateTimer();
-  currentTime.style.color = "black";
-  startButton.style.display = "flex";
-  stopButton.style.display = "none";
-};
-
-// Подключаем к кнопкам прослушивание событий с привязкой к функциям
-startButton.addEventListener("click", startTimer);
-stopButton.addEventListener("click", stopTimer);
-clearButton.addEventListener("click", clearTimer);
+// Подключаем к кнопке прослушивание событий с привязкой к функции
+BUTTON.addEventListener("click", getJoke);
