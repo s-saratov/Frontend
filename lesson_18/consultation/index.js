@@ -9,10 +9,10 @@
 // console.log(9);
 // console.log(10);
 
-const USER_AVATAR = document.querySelector("user-avatar");
-const NAME = document.querySelector("user-name");
-const USER_PHONE = document.querySelector("user-phone");
-const USER_CITY = document.querySelector("user-city");
+const USER_AVATAR = document.querySelector(".user-avatar");
+const USER_NAME = document.querySelector(".user-name");
+const USER_PHONE = document.querySelector(".user-phone");
+const USER_CITY = document.querySelector(".user-city");
 const GET_USER_BUTTON = document.querySelector(".get-user");
 const RANDOM_USER_URL = "https://randomuser.me/api/";
 
@@ -21,12 +21,19 @@ const getUser = async () => {
     const response = await fetch(RANDOM_USER_URL);
     console.log(response);
     
-    const result = response.json();
+    const result = await response.json();
     console.log(result);
+    console.log(result.results[0].name);
 
     if (response.ok) {
         // Тут прописываем логику, когда промис вернул нормальные (ожидаемые) данные с сервера,
         // т.е. promiseStatus === "fulfilled"
+        const nameObject = result.results[0].name;
+        const fullName = `${nameObject.title} ${nameObject.first} ${nameObject.last}`;
+        console.log(result.results[0].name);
+        
+        USER_NAME.textContent = `${USER_NAME.textContent} ${fullName}`;
+
     } else {
         // Тут прописываем логику, когда промис вернул ошибку с сервера, т.е. promiseStatus === "rejected"
         alert("Ошибка");
