@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./styles.css" type="text/css" />
+    <title>Lesson 6</title>
+  </head>
+  <body>
+    <div class="page-wrapper">
+      <form action="" class="registration-form" method="get">
+        <h3>Registration</h3>
+
+        <div>
+          <label for="firstName">Your name:</label>
+          <input
+            required
+            maxlength="6"
+            type="text"
+            name="firstName"
+            placeholder="Enter your name"
+            id="firstName"
+            class="form-input"
+          />
+        </div>
+
+        <div>
+          <label for="lastName">Your surname:</label>
+          <input
+            type="text"
+            name="lastName"
+            placeholder="Enter your surname"
+            id="lastName"
+            class="form-input"
+          />
+        </div>
+
+        <div>
+          <label for="email">Your email:</label>
+          <input disabled
+            type="email"
+            name="email"
+            placeholder="Enter your email"
+            id="email"
+            class="form-input"
+          />
+        </div>
+
+        <div>
+          <label for="password">Password:</label>
+          <input
+            type="password"
+            name="password"
+            placeholder="Enter your password"
+            id="password"
+            class="form-input"
+          />
+        </div>
+
+        <textarea placeholder="Tell about yourself"></textarea>
+
+        <label for="country">Choose your country:</label>
+        <select id="country" name="country">
+          <option value="" selected>--Please choose your country--</option>
+          <option value="usa">USA</option>
+          <option value="ger">Germany</option>
+          <option value="mar">Marokko</option>
+        </select>
+
+        <div>
+          <label for="rules">Do you agree with our conditions:</label>
+          <input type="checkbox" id="rules" checked />
+        </div>
+
+        <div>
+          <button type="reset">Reset</button>
+          <button type="submit">Submit</button>
+        </div>
+      </form>
+    </div>
+  </body>
+</html>
